@@ -1,0 +1,24 @@
+﻿<Window x:Class="SimpleAutoCompleteWPFControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleAutoCompleteWPFControl"
+        mc:Ignorable="d"
+        Title="Autocomplete Text Box Project"
+        Height="350"
+        Width="370">
+    <Grid>
+        <StackPanel Margin="5">
+            <Label Content="Type in Search Phrase:" />
+            <local:TextBoxAutoComplete x:Name="autoTxtBoxEng"
+                SuggestionProvider="{Binding Path=MySuggestionProvider}"                 
+                TextBoxContent="{Binding Path=SearchText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+            <StackPanel Orientation="Horizontal" Margin="0 120 0 0" Height="30">
+                <Label Content="Selected Item: " />
+                <Label Content="{Binding Path=SearchText}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
