@@ -30,7 +30,7 @@ namespace SimpleAutoCompleteWPFControl
                 }
             }
         }
-        private string _searchText = string.Empty;
+        private string _searchText;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

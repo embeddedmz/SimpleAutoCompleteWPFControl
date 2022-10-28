@@ -5,7 +5,7 @@ namespace SimpleAutoCompleteWPFControl
 {
     public interface ISuggestionProvider
     {
-        public IEnumerable<string> GetSuggestions(string filter);
-        public IEnumerable<string> GetFullCollection();
+        IEnumerable<string> GetSuggestions(string filter);
+        IEnumerable<string> GetFullCollection();
     }
 }

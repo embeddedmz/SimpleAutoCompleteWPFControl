@@ -38,6 +38,8 @@ namespace SimpleAutoCompleteWPFControl
 
         private ISuggestionProvider _suggestionProvider;
 
+        private bool _userHasPressedAKey = false;
+
         public TextBoxAutoComplete()
         {
             InitializeComponent();
@@ -130,7 +132,12 @@ namespace SimpleAutoCompleteWPFControl
 
                 popup.VerticalOffset = txtSearch.ActualHeight;
                 IsBusy = false;
-                popup.IsOpen = true;
+                
+                if (_userHasPressedAKey)
+                {
+                    popup.IsOpen = true;
+                    _userHasPressedAKey = false;
+                }
             }
             else
             {
@@ -184,6 +191,8 @@ namespace SimpleAutoCompleteWPFControl
 
         private void txtSearch_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            _userHasPressedAKey = true;
+
             if (e.Key == Key.Tab && listBox.SelectedItem != null)
             {
                 this.popup.IsOpen = false;
