@@ -15,7 +15,6 @@
                 BorderBrush="Gray">
             <DockPanel HorizontalAlignment="Stretch">
                 <TextBox x:Name="txtSearch"
-                         BorderThickness="0"
                          Style="{Binding Path=TextBoxStyle, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                          Text="{Binding Path=TextBoxContent, UpdateSourceTrigger=PropertyChanged}"
                          TextChanged="txtSearch_TextChanged"
