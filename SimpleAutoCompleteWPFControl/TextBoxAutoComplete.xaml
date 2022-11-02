@@ -12,7 +12,6 @@
     <Grid x:Name="grid">
         <Border x:Name="brdButton"
                 Grid.Column="1"
-                BorderThickness="1"
                 BorderBrush="Gray">
             <DockPanel HorizontalAlignment="Stretch">
                 <TextBox x:Name="txtSearch"
