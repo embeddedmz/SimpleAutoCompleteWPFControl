@@ -30,6 +30,14 @@ namespace SimpleAutoCompleteWPFControl
         public static readonly DependencyProperty _txtBoxContentProperty =
             DependencyProperty.Register("TextBoxContent", typeof(string), typeof(TextBoxAutoComplete), new UIPropertyMetadata(string.Empty));
 
+        public Style TextBoxStyle
+        {
+            get { return (Style)GetValue(_txtBoxStyle); }
+            set { SetValue(_txtBoxStyle, value); }
+        }
+        public static readonly DependencyProperty _txtBoxStyle =
+            DependencyProperty.Register("TextBoxStyle", typeof(Style), typeof(TextBoxAutoComplete), new UIPropertyMetadata(null));
+
         public ObservableCollection<string> SuggestionResults
         {
             get { return _suggestionResults; }
